@@ -1,0 +1,49 @@
+{
+  "description": "Example configuration for Neural Semantic Compiler",
+  "database": {
+    "path": "~/.neuralsemantic/patterns.db",
+    "connectionPoolSize": 5,
+    "enableWalMode": true,
+    "cacheSizeMb": 64
+  },
+  "vector": {
+    "modelName": "sentence-transformers/all-MiniLM-L6-v2",
+    "persistDirectory": "~/.neuralsemantic/vector_store",
+    "similarityThreshold": 0.8,
+    "maxResults": 10,
+    "enableGpu": false
+  },
+  "compression": {
+    "defaultLevel": "balanced",
+    "preserveCode": true,
+    "preserveUrls": true,
+    "preserveNumbers": true,
+    "minCompressionRatio": 0.1,
+    "maxCompressionRatio": 0.8,
+    "semanticThreshold": 0.90,
+    "targetSemanticScore": 0.95
+  },
+  "learning": {
+    "enableAutoDiscovery": true,
+    "minPatternFrequency": 3,
+    "patternQualityThreshold": 7.0,
+    "feedbackLearningRate": 0.1
+  },
+  "logLevel": "info",
+  "logFile": "~/.neuralsemantic/neuralsemantic.log",
+  "enableCaching": true,
+  "cacheTtlSeconds": 300,
+  "maxCacheSize": 1000,
+  "activeDomains": [
+    "general",
+    "web-development",
+    "agile",
+    "devops"
+  ],
+  "domainWeights": {
+    "general": 1.0,
+    "web-development": 1.2,
+    "agile": 1.1,
+    "devops": 1.15
+  }
+}

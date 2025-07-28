@@ -1,0 +1,43 @@
+{
+  "name": "neuralsemantic-monorepo",
+  "private": true,
+  "description": "Neural Semantic Compiler - The first compiler for neural communication",
+  "author": "Brenner Cruvinel <cruvinelbrenner@gmail.com>",
+  "homepage": "https://neurosemantic.tech",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeuralSemantic/neuralsemantic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NeuralSemantic/neuralsemantic/issues"
+  },
+  "workspaces": [
+    "packages/*",
+    "integrations/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "test": "lerna run test --stream",
+    "lint": "eslint packages/*/src --ext .ts",
+    "type-check": "lerna run type-check",
+    "release": "lerna version && lerna publish",
+    "docs": "typedoc --entryPoints packages/*/src/index.ts",
+    "dev": "lerna run dev --parallel",
+    "clean": "lerna clean && lerna exec -- rm -rf dist",
+    "bootstrap": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "prettier": "^3.0.0",
+    "typedoc": "^0.24.0",
+    "typescript": "^5.1.0",
+    "lerna": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "license": "MIT"
+}

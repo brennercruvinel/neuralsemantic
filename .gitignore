@@ -1,0 +1,61 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.claude
+.vscode/
+.idea/
+.jetty/
+
+# Test files
+/ccplugins_aggressive.txt
+/ccplugins_balanced.txt
+/ccplugins_light.txt
+/test_ccplugins.txt
+/test_input.txt
+/test_output.txt
+
+# Project specific
+/plan.md
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+**/dist/
+build/
+**/build/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+**/.pytest_cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Misc
+.gitignore

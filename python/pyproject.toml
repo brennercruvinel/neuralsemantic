@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neuralsemantic"
+version = "0.3.0"
+description = "The first compiler for neural communication"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Brenner Cruvinel", email = "cruvinelbrenner@gmail.com"}]
+requires-python = ">=3.8"
+keywords = ["llm", "compression", "semantic", "neural", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pydantic>=2.0.0",
+    "chromadb>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "numpy>=1.21.0",
+    "scikit-learn>=1.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-benchmark>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0",
+]
+gpu = [
+    "torch>=1.12.0",
+    "faiss-gpu>=1.7.0",
+]
+api = [
+    "fastapi>=0.95.0",
+    "uvicorn>=0.20.0",
+    "websockets>=11.0.0",
+]
+
+[project.scripts]
+nsc = "neuralsemantic.cli.main:cli"
+neuralsemantic = "neuralsemantic.cli.main:cli"
+
+[project.urls]
+Homepage = "https://github.com/NeuralSemantic/neuralsemantic"
+Documentation = "https://neuralsemantic.readthedocs.io/"
+Repository = "https://github.com/NeuralSemantic/neuralsemantic"
+Issues = "https://github.com/NeuralSemantic/neuralsemantic/issues"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203", "W503"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+markers = [
+    "benchmark: performance benchmark tests",
+    "integration: integration tests",
+    "slow: slow tests",
+]

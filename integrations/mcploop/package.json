@@ -1,0 +1,82 @@
+{
+  "name": "@neurosemantic/mcploop",
+  "version": "1.0.0",
+  "description": "Neural Semantic Compiler - MCPLOOP integration for Claude Code CLI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mcploop-nsc": "./dist/bin/mcploop-nsc.js"
+  },
+  "author": "Brenner Cruvinel <cruvinelbrenner@gmail.com>",
+  "homepage": "https://neurosemantic.tech",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeuralSemantic/neuralsemantic.git",
+    "directory": "integrations/mcploop"
+  },
+  "bugs": {
+    "url": "https://github.com/NeuralSemantic/neuralsemantic/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "neural-compiler",
+    "mcploop",
+    "claude-code",
+    "mcp",
+    "compression",
+    "semantic-compression"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "mcploop-config.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist",
+    "install-mcploop": "npm run build && mcploop install .",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@neurosemantic/core": "^1.0.0",
+    "@neurosemantic/types": "^1.0.0",
+    "@neurosemantic/cli": "^1.0.0",
+    "@neurosemantic/utils": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "mcploop": {
+    "name": "neuralsemantic",
+    "description": "Neural Semantic Compiler for reducing LLM costs by 60-70%",
+    "version": "1.0.0",
+    "commands": [
+      "compress",
+      "patterns",
+      "stats",
+      "health"
+    ],
+    "autoInstall": true,
+    "dependencies": {
+      "python": ">=3.7",
+      "neuralsemantic": ">=1.0.0"
+    }
+  }
+}

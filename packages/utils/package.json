@@ -1,0 +1,57 @@
+{
+  "name": "@neurosemantic/utils",
+  "version": "1.0.0",
+  "description": "Neural Semantic Compiler - Utility functions and helpers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Brenner Cruvinel <cruvinelbrenner@gmail.com>",
+  "homepage": "https://neurosemantic.tech",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeuralSemantic/neuralsemantic.git",
+    "directory": "packages/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/NeuralSemantic/neuralsemantic/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "neural-compiler",
+    "utilities",
+    "semantic-compression",
+    "token-estimation",
+    "text-analysis"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@neurosemantic/types": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
